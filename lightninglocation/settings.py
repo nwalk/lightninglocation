@@ -93,6 +93,7 @@ TEMPLATE_DIRS = (
 )
 CLICKY_SITE_ID = ''
 
+
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
     # Use hyperlinked styles by default.

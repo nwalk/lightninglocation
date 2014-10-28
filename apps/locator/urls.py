@@ -4,6 +4,6 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.MainView.as_view()),
-    url(r'^map$', views.MapView.as_view()),
+    url(r'^$', views.MainView.as_view(), name='main'),
+    url(r'^map$', views.MapView.as_view(), name='map'),
 )
