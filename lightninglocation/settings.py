@@ -41,8 +41,14 @@ INSTALLED_APPS = (
     'analytical',
     'bootstrap',
     'rest_framework',
-
+    'registration'
 )
+
+LOGIN_REDIRECT_URL = '/'
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: "/",
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -92,6 +98,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
 CLICKY_SITE_ID = ''
+
 
 
 REST_FRAMEWORK = {
