@@ -38,10 +38,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.locator',
-    'analytical',
     'bootstrap',
     'rest_framework',
-    'registration'
+    'registration',
+    'storages',
 )
 
 LOGIN_REDIRECT_URL = '/'
@@ -97,8 +97,18 @@ USE_TZ = True
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
-CLICKY_SITE_ID = ''
+# CLICKY_SITE_ID = ''
 
+DEFAULT_FILE_STORAGE = 'lightninglocation.s3utils.MediaRootS3BotoStorage'
+STATICFILES_STORAGE = 'lightninglocation.s3utils.StaticRootS3BotoStorage'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_STORAGE_BUCKET_NAME = 'thunder12'
+MEDIA_ROOT ='media/'
+STATIC_ROOT = 'static/'
+S3_URL = 'http://{}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+MEDIA_URL = S3_URL + MEDIA_ROOT
+STATIC_URL = S3_URL + STATIC_ROOT
 
 
 REST_FRAMEWORK = {
