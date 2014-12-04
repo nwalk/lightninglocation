@@ -26,6 +26,12 @@
 #text{
     color: blue;
 }
+#image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 #divs {
     -webkit-border-radius: 14px;
