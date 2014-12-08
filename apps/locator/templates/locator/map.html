@@ -24,5 +24,17 @@
         opacity: 1,
         fillOpacity: 0.75
     };
+    $.getJSON("{%  url 'api:sensors' %}", function (data) {
+        L.geoJson(data, {style: county_style,
+            onEachFeature: function (feature, layer) {
+                (function (layer, properties) {
+                    layer.on("click", function (e) {
+                        var popup = L.popup().setLatLng(e.latlng)
+                                .setContent('<a href="www.google.com">' + properties.name + '</a>')
+                                .openOn(map);
+                    });
+            }) (layer, feature.properties);
+    }}).addTo(map);
+    })
     </script>
 {% endblock %}
