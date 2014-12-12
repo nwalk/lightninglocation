@@ -22,7 +22,7 @@ class SensorsFilter(django_filters.FilterSet):
         fields = ['lat', 'lon', 'gid']
 
 
-class UniversityCollection(generics.ListAPIView):
+class SensorsCollection(generics.ListAPIView):
     """
     API endpoint that allows users to be viewed or edited.
     """
